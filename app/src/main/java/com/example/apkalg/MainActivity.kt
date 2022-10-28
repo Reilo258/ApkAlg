@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<Button>(R.id.emptybtn).setOnClickListener {
             val isempty: Boolean = stek.isEmpty();
-            findViewById<TextView>(R.id.textlbl).text = isempty.toString();
+            findViewById<TextView>(R.id.textlbl).text = "Stack is empty: " + isempty.toString();
         }
     }
 }
