@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var stek =  Stack<Int>();
-        //planets.addAll(listOf("Mercury", "Venus", "Earth", "Jupiter"))
+        findViewById<TextView>(R.id.textlbl).text = stek.toString();
 
         findViewById<Button>(R.id.pushbtn).setOnClickListener {
             var nowy = findViewById<EditText>(R.id.edit1).text.toString().toInt();
@@ -21,8 +21,20 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.textlbl).text = stek.toString();
         }
         findViewById<Button>(R.id.popbtn).setOnClickListener {
-            stek.pop();
-            findViewById<TextView>(R.id.textlbl).text = stek.toString();
+            if(stek.isEmpty())
+            {
+                findViewById<TextView>(R.id.textlbl).text = "Stack is Empty!";
+            }
+            else
+            {
+                stek.pop();
+                findViewById<TextView>(R.id.textlbl).text = stek.toString();
+            }
+
+        }
+        findViewById<Button>(R.id.emptybtn).setOnClickListener {
+            val isempty: Boolean = stek.isEmpty();
+            findViewById<TextView>(R.id.textlbl).text = isempty.toString();
         }
     }
 }
