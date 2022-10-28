@@ -27,14 +27,17 @@ class MainActivity : AppCompatActivity() {
             }
             else
             {
+                findViewById<TextView>(R.id.text2lbl).text = "Element deleted: " + stek.lastElement().toString();
                 stek.pop();
                 findViewById<TextView>(R.id.textlbl).text = stek.toString();
             }
 
         }
         findViewById<Button>(R.id.emptybtn).setOnClickListener {
-            val isempty: Boolean = stek.isEmpty();
-            findViewById<TextView>(R.id.textlbl).text = "Stack is empty: " + isempty.toString();
+            findViewById<TextView>(R.id.textlbl).text = "Stack is empty: " + stek.isEmpty();
+        }
+        findViewById<Button>(R.id.sizebtn).setOnClickListener {
+            findViewById<TextView>(R.id.textlbl).text = "Size: " + stek.size.toString();
         }
     }
 }
