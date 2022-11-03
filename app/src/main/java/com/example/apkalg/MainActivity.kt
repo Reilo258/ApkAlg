@@ -63,6 +63,18 @@ class MainActivity : AppCompatActivity() {
             txt_ile_w_kolejce.text = ilosc_osob_w_kolejce.toString();
         }
 
+        butt_usun_z_kolejki.setOnClickListener {
+            if (!kolejka.isEmpty()) {
+                Toast.makeText(applicationContext, "Usunieto numer: " + kolejka.element() + " z kolejki", length).show()
+                kolejka.remove();
+                ilosc_osob_w_kolejce -= 1;
+                txt_ile_w_kolejce.text = ilosc_osob_w_kolejce.toString();
+            }
+            else {
+                Toast.makeText(applicationContext, "Brak osob w kolejce", length).show();
+            }
+        }
+
 
     }
 }
