@@ -54,5 +54,15 @@ class MainActivity : AppCompatActivity() {
         val length = Toast.LENGTH_SHORT;
         var numer = 1;
         var ilosc_osob_w_kolejce = 0;
+
+        butt_dodaj_do_kolejki.setOnClickListener {
+            Toast.makeText(applicationContext, "Twój numer to: " + numer, length).show();
+            kolejka.add(numer);
+            numer += 1;
+            ilosc_osob_w_kolejce += 1;
+            txt_ile_w_kolejce.text = ilosc_osob_w_kolejce.toString();
+        }
+
+
     }
 }
