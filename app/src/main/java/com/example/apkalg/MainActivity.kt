@@ -75,6 +75,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+        butt_pierw_i_ost_w_kolejce.setOnClickListener {
+            if(!kolejka.isEmpty()) {
+                val pierw = kolejka.element();
+                val ost = kolejka.last();
+                txt_pierwszy_w_kolejce.text = pierw.toString();
+                txt_ostatni_w_kolejce.text = ost.toString();
+            }
+            else {
+                Toast.makeText(applicationContext, "Brak osob w kolejce", length).show();
+                txt_pierwszy_w_kolejce.text = "Brak osob w kolejce";
+                txt_ostatni_w_kolejce.text = "Brak osob w kolejce";
+            }
+        }
     }
 }
